@@ -1,11 +1,11 @@
-const User       = require('../../models/users');
+const Checkpoint = require('../../../models/checkpoint');
 const controller = {}; 
 
-controller.show = async (req,res) => {
+controller.index = async (req,res) => {
   try {
-        const users = await User.find().select('email');
+        const checkpoints = await Checkpoints.find();
         res.status(200).json({
-            users
+            checkpoints
         });
     } catch (error) {
         res.status(400).json({
@@ -14,7 +14,11 @@ controller.show = async (req,res) => {
     }
 };
 
-controller.create = async (req,res) => {
+controller.show = async(req,res) =>{
+
+};
+
+controller.store = async (req,res) => {
 	
 };
 
@@ -22,7 +26,7 @@ controller.update = async (req,res) => {
 	
 };
 
-controler.delete =async (req,res) => {
+controller.delete =async (req,res) => {
 	
 };
 

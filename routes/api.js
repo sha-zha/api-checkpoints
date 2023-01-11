@@ -16,7 +16,6 @@ router.post('/v1/user/:id',UserController.update);
 router.post('/v1/user/delete/:id',UserController.delete);
 
 // all routers checkpoints
-
 router.get('/v1/checkpoint/', CheckpointController.index);
 router.get('/v1/checkpoint/:id', CheckpointController.show);
 router.post('/v1/checkpoint/add',CheckpointController.store);

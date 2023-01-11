@@ -45,7 +45,7 @@ controller.store = async (req,res) => {
     	email,
     	password,
     	role,
-    	code,
+    	code
 	});
   
 const ressult = await User.create(req.body);
@@ -66,12 +66,12 @@ const {firstname,lastname,email,password,role,code} = req.body;
     	email: email,
     	password: password,
     	role: role,
-    	code: code,
+    	code: code
 	};
   
 const ressult = await User.findOneAndUpdate(req.params.id, user, {
   returnOriginal: false
-});;
+});
 
  res.status(201).json({
             success: true,
@@ -82,9 +82,9 @@ const ressult = await User.findOneAndUpdate(req.params.id, user, {
 };
 
 controller.delete =async (req,res) => {
-	const {id} = req.params.id;
+	const id = req.params.id;
+	const result = await User.deleteOne({ _id: id });
 
-	
 	res.status(200).json({
 		success:true,
 		message:"L'utilisateur a bien été supprimé"

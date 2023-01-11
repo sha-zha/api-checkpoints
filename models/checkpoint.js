@@ -7,9 +7,14 @@ const userSchema = mongoose.Schema({
     	require: true,
     	ref: 'users'
     },
-    start : {},
-    end : {},
-
+    morning : {
+        type: Array,
+        require: false
+    },
+    afternoon : {
+        type: Array,
+        require: false
+    },
 }, 
  { timestamps: true }   
 );

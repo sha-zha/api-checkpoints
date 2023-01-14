@@ -2,10 +2,11 @@ const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
 
 const userSchema = mongoose.Schema({
-	UserId: {
+	userId: {
     	type: ObjectId,
     	require: true,
-    	ref: 'users'
+    	ref: 'users',
+        index:true
     },
     morning : {
         type: Array,

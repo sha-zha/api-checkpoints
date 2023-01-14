@@ -4,6 +4,7 @@ const router         = express.Router();
 // Controllers
 const UserController = require('../controllers/api/v1/userController');
 const CheckpointController = require('../controllers/api/v1/checkpointController');
+const ReferentialController = require('../controllers/api/v1/referentialController');
 //models
 const User = require('../models/users');
 const Checkpoint = require('../models/checkpoint');
@@ -21,5 +22,9 @@ router.get('/v1/checkpoint/:id', CheckpointController.show);
 router.post('/v1/checkpoint/add',CheckpointController.store);
 router.post('/v1/checkpoint/:id',CheckpointController.update);
 router.post('/v1/checkpoint/delete/:id',CheckpointController.delete);
+
+// all routers referentials
+router.get('/v1/referential', ReferentialController.index);
+router.get('/v1/referential/:id', ReferentialController.show);
 
 module.exports = router;
